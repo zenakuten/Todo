@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Data\Interfaces\Todo.Data.Interfaces\Todo.Data.Interfaces.csproj" />
+    <ProjectReference Include="..\..\Interfaces\Todo.Domain.Interfaces\Todo.Domain.Interfaces.csproj" />
+    <ProjectReference Include="..\..\Models\Todo.Domain.Models\Todo.Domain.Models.csproj" />
+  </ItemGroup>
+
+</Project>

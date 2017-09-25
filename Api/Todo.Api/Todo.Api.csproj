@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Cors" Version="2.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Data\Context\Todo.Data.Context\Todo.Data.Context.csproj" />
+    <ProjectReference Include="..\..\Data\Context\Todo.Data.MemoryContext\Todo.Data.MemoryContext.csproj" />
+    <ProjectReference Include="..\..\Data\Interfaces\Todo.Data.Interfaces\Todo.Data.Interfaces.csproj" />
+    <ProjectReference Include="..\..\Domain\Interfaces\Todo.Domain.Interfaces\Todo.Domain.Interfaces.csproj" />
+    <ProjectReference Include="..\..\Domain\Models\Todo.Domain.Models\Todo.Domain.Models.csproj" />
+    <ProjectReference Include="..\..\Domain\Services\Todo.Domain.Services\Todo.Domain.Services.csproj" />
+    <ProjectReference Include="..\Mappers\Todo.Api.Mappers\Todo.Api.Mappers.csproj" />
+    <ProjectReference Include="..\Models\Todo.Api.Models\Todo.Api.Models.csproj" />
+  </ItemGroup>
+
+</Project>

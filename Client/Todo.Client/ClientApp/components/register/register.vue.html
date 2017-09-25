@@ -1,0 +1,24 @@
+﻿<template>
+   <div>
+        <h3> Register </h3>
+        <form @submit.prevent>
+            <div class="row">
+                <div class="col-sm-9 col-xs-6">
+                    <input id="username" class="form-control" v-model="username" placeholder="Username" />
+                </div>
+                <div class="col-sm-3 col-xs-6">
+                    <div class="row">
+                        <button class="btn btn-primary" @click="register" type="submit">register</button>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <p>Enter a new username </p>
+                </div>
+            </div>
+        </form>
+    </div>
+</template>
+
+<script src="./register.ts"></script>

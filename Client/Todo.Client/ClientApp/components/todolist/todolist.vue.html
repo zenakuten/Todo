@@ -1,0 +1,33 @@
+﻿<template>
+    <div class="todolist">
+        <h1>Todo Lists</h1>
+        <div class="row">
+            <div class="col-sm-10 col-xs-8"></div>
+            <div class="col-sm-2 col-xs-4">
+                <button class="btn btn-success" @click="newList"><span class="glyphicon glyphicon-plus-sign"> </span> New </button>
+            </div>
+        </div>
+        <hr />
+        <div v-if="lists.length">
+            <div class="row listitem" v-for="list in lists" >
+                <div class="col-sm-6 col-xs-6">
+                    <input :id="'list' + list.id" v-model="list.name" placeholder="List Name" @change="saveList(list)" @keyup.enter="$router.replace('/listdetail/' + list.id)" />
+                </div>
+                <div class="col-sm-6 col-xs-6">
+                    <div class="pull-right">
+                        <span class="rowpulled"> {{ list.items.length }} {{ list.items.length == 1 ? 'item' : 'items' }} </span>
+                        <router-link :to="{ path : '/listdetail/' + list.id }"  >
+                            <span class="glyphicon glyphicon-edit rowpulled" role="button" > </span>
+                        </router-link>
+                        <span class="glyphicon glyphicon-trash rowpulled" role="button" @click="deleteList(list)"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div v-else>
+            <p ><em>No Lists</em></p>
+        </div>
+    </div>
+</template>
+<style src="./todolist.css"></style>
+<script src="./todolist.ts"></script>

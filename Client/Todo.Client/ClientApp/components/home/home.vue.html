@@ -1,0 +1,39 @@
+<template>
+    <div class="home">
+        <h3>Hello, {{ user.username }} </h3>
+        <div v-if="lists.length > 0">
+            <p>Todo lists</p>
+            <div v-for="list in lists" :class="'panel panel-default'  + (isComplete(list) ? ' panel-success' : '') ">
+               <div class="row">
+                   <div class="col-sm-12 col-max-length">
+                    <h3>{{ list.name ? list.name : '(No name)' }}</h3> 
+                    </div>
+               </div> 
+                <div class="row">
+                    <div class="col-sm-3 col-xs-2"><label>Done</label></div>
+                    <div class="col-sm-3 col-xs-6"><label>Value</label></div>
+                    <div class="col-sm-3 hidden-xs"><label>Details</label></div>
+                    <div class="col-sm-3 col-xs-2"><label>Deadline</label></div>
+                </div>
+                <div v-for="item in list.items" class="row">
+                    <div class="col-sm-3 col-xs-2">
+                       <span class="abc-checkbox checkbox-success" >
+                            <input :id="'check' + item.id" type="checkbox"  @click="toggleComplete(item)" v-model="item.completed"/>
+                            <label :for="'check' + item.id">&nbsp;</label>
+                        </span>
+                    </div>
+                    <div class="col-sm-3 col-xs-6 col-max-length">{{item.value ? item.value : '(no value)'}}</div>
+                    <div class="col-sm-3 hidden-xs col-max-length">{{item.details ? item.details : '(no details)'}}</div>
+                    <div :class="'col-sm-3 col-xs-2' + (passedDue(item) ? ' text-danger' : '') ">{{item.deadline | datetime('MM/DD/YYYY')}}</div>
+                </div>
+                <div class="row"><div class="col-sm-12">&nbsp;</div></div>
+            </div>
+        </div>
+        <div v-else>
+        <p>You have no todo lists.  Click <router-link to="/todolist">here</router-link> to get started.</p>
+        </div>
+    </div>
+</template>
+<script src="./home.ts"></script>
+<style src="./home.css"></style>
+

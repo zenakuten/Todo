@@ -1,0 +1,39 @@
+﻿<template>
+    <div>
+        <h1>{{ list.name }}&nbsp;</h1>
+        <button class="btn btn-success" @click="newTodo"><span class="glyphicon glyphicon-plus-sign"> </span> New </button>
+        <hr>
+        <div v-if="list.items.length">
+            <div class="row todo" v-for="item in list.items" >
+                <div :class="'col-sm-12 panel panel-default' + (passedDue(item) ? ' panel-danger' : (item.completed ? ' panel-success' : ''))" >
+                    <div class="listitem" >
+                        <span class="abc-checkbox checkbox-success" >
+                            <input :id="'check' + item.id" type="checkbox"  @click="toggleComplete(item)" v-model="item.completed"/>
+                            <label :for="'check' + item.id">&nbsp;</label>
+                        </span>
+                        <input :id="'todovalue' + item.id" v-model="item.value" placeholder="Todo" @change="todoChanged(item)" @keyup.enter="newTodo()" />
+                         <button type="button" data-toggle="collapse" :data-target="'#details' + item.id" class="glyphicon glyphicon-chevron-down" ></button>
+                        <datepicker :name="'datepicker' + item.id" v-model="item.deadline" @input="todoChanged(item)" bootstrapStyling="true"></datepicker>
+                        <label v-if="passedDue(item)" class="text-danger">Overdue</label>
+                        <span class="glyphicon glyphicon-trash pull-right rowpulled" role="button" @click="deleteTodo(item)"></span>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div :id="'details' + item.id" class="collapse">
+                        <span class="abc-checkbox checkbox-success invisible" >
+                            <input type="checkbox"  />
+                            <label >&nbsp;</label>
+                        </span>
+                        <div class="detailarea">
+                        <div ><textarea v-model="item.details" placeholder="Details..."  @change="todoChanged(item)" /></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" v-else>
+            <p><em>No Todos</em></p>
+        </div>
+    </div>
+</template>
+<script src="./listdetail.ts"></script>
+<style src="./listdetail.css"></style>

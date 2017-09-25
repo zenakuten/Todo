@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\Domain\Models\Todo.Domain.Models\Todo.Domain.Models.csproj" />
+    <ProjectReference Include="..\..\Interfaces\Todo.Data.Interfaces\Todo.Data.Interfaces.csproj" />
+    <ProjectReference Include="..\Todo.Data.Context\Todo.Data.Context.csproj" />
+  </ItemGroup>
+
+</Project>

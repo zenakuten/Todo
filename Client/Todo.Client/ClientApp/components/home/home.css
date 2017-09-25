@@ -1,0 +1,14 @@
+﻿
+
+.home .row {
+    margin-right:0;
+    margin-left:0;
+    }
+
+.home .panel {
+    border-width:3px;
+    }
+
+.home .col-max-length {
+    overflow:hidden;
+    }

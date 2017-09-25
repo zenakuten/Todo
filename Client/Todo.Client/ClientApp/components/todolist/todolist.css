@@ -1,0 +1,28 @@
+﻿
+
+.glyphbutton {
+    font-size:20pt;
+    cursor:pointer;
+    }
+
+.todolist > .row {
+    margin-left:0;
+    margin-right:0;
+    }
+
+.show-on-hover {
+    display:none;
+    }
+
+label:hover + .show-on-hover {
+    display:block;
+    }
+
+label .show-on-hover:hover {
+    display:none;
+    }
+
+
+.todolist .rowpulled {
+    padding-right:20px;
+    }

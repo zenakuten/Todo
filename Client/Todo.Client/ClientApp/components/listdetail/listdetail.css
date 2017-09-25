@@ -1,0 +1,43 @@
+﻿.detailarea {
+    display:inline-block;
+    padding:4px 0 4px 0;
+    }
+
+.detailarea  textarea {
+    width:210px;
+    }
+
+.todo {
+    min-width:430px;
+    padding:0 4px 4px 4px;
+    }
+
+
+.todo .panel {
+    margin:0;
+    border-width:2px;
+    }
+
+.todo .vdp-datepicker {
+    width:110px;
+    margin-left:4px;
+    }
+
+.listitem > * {
+    float:left;
+    margin:4px 0 4px 0;
+    }
+.listitem > label {
+    padding:4px 0 0 4px;
+    }
+
+.listitem button {
+    height:26px;
+    top:0px;
+    width:30px;
+    }
+
+.todo .rowpulled {
+    top:8px;
+    padding-right:20px;
+    }
