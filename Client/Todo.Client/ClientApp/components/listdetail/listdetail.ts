@@ -85,7 +85,11 @@ export default class ListDetailComponent extends Vue {
         }
 
     passedDue(item:ListItemModel) {
-        var retval = new Date(item.deadline).getDate() < new Date().getDate();
+        var d = new Date(item.deadline);
+        var itemDate = new Date(d.getFullYear(), d.getMonth(), d.getDate());
+        var t = new Date();
+        var todayDate = new Date(t.getFullYear(),t.getMonth(),t.getDate());
+        var retval = itemDate < todayDate;
         return retval && !item.completed;
         }
 }
